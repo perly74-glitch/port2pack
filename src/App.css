@@ -1,0 +1,210 @@
+:root {
+  --burgundy: #6b0f24;
+  --burgundy-dark: #4a0918;
+  --burgundy-hover: #82142d;
+  --cream-bg: #f9f6f0;
+  --cream-card: #fffdf9;
+  --cream-border: #e8e2d5;
+  --gold-accent: #d4af37;
+  --text-dark: #2c221e;
+  --text-muted: #7A6F68;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cream-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+.navbar {
+  background-color: var(--burgundy);
+  color: var(--cream-card);
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold-accent);
+}
+
+.brand-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  color: var(--cream-card);
+  text-transform: uppercase;
+}
+
+.brand-logo span {
+  color: var(--gold-accent);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.nav-menu button {
+  background: transparent;
+  border: none;
+  color: var(--cream-card);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.nav-menu button:hover {
+  background-color: rgba(255, 253, 249, 0.15);
+  color: var(--gold-accent);
+}
+
+.nav-menu button.active {
+  background-color: var(--cream-card);
+  color: var(--burgundy);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Layout Containers */
+.container {
+  max-width: 1140px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.page-header {
+  font-size: 2rem;
+  color: var(--burgundy);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold-accent);
+}
+
+.card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(107, 15, 36, 0.05);
+  margin-bottom: 2rem;
+}
+
+/* Hero Section on Home Page */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #fffdf9 0%, #f4ede2 100%);
+  border-radius: 16px;
+  border: 1px solid var(--cream-border);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Buttons */
+.btn-burgundy {
+  background-color: var(--burgundy);
+  color: var(--cream-card);
+  border: 1px solid var(--burgundy-dark);
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(107, 15, 36, 0.2);
+}
+
+.btn-burgundy:hover {
+  background-color: var(--burgundy-hover);
+  transform: translateY(-1px);
+}
+
+/* Product Cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-image{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;  
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107, 15, 36, 0.08);
+}
+
+.product-card h3 {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.product-vendor {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
