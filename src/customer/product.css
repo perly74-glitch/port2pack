@@ -1,0 +1,61 @@
+/* Product Grid */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Product Card */
+
+.product-card {
+  background: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107, 15, 36, 0.08);
+}
+
+/* Product Image */
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Product Name */
+
+.product-card h3 {
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Product Vendor */
+
+.product-vendor {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+/* Product Price */
+
+.product-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+}
