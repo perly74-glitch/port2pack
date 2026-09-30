@@ -6,6 +6,7 @@ import Cart from "./pages/cart.jsx";
 export default function Main() {
   const [activePage, setActivePage] = useState("home");
   const [cart, setCart] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const sampleProducts = [
     {
       id: 1,
@@ -169,7 +170,12 @@ export default function Main() {
                 placeholder="Search for products, suppliers or categories..."
               />
 
-              <button className="search-button">Search</button>
+              <button
+  className="search-button"
+  onClick={() => setSearchTerm(searchTerm)}
+>
+  Search
+</button>
             </div>
             <div className="category-section">
               <h3>Shop by Category</h3>
@@ -323,16 +329,21 @@ export default function Main() {
         {activePage === "products" && (
           <div>
             <h2 className="page-header">Marketplace Products</h2>
-            <div className="product-search">
+             <div className="product-search">
   <input
     type="text"
     placeholder="Search products..."
+    onChange={(e) => setSearchTerm(e.target.value)}
   />
   <button className="search-button">Search</button>
 </div>
 
 <div className="product-grid">
-              {sampleProducts.map((item) => (
+              {sampleProducts
+  .filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .map((item) => (
                 <div key={item.id} className="product-card">
                   <div>
                     <img
