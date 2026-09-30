@@ -323,7 +323,15 @@ export default function Main() {
         {activePage === "products" && (
           <div>
             <h2 className="page-header">Marketplace Products</h2>
-            <div className="product-grid">
+            <div className="product-search">
+  <input
+    type="text"
+    placeholder="Search products..."
+  />
+  <button className="search-button">Search</button>
+</div>
+
+<div className="product-grid">
               {sampleProducts.map((item) => (
                 <div key={item.id} className="product-card">
                   <div>
